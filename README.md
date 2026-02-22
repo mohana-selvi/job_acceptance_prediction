@@ -211,7 +211,8 @@ The application will automatically open in your default web browser.
 
 
 ## 🌐Deployment Link
-
+Live app :
+https://jobacceptanceprediction-5anvrex2wihqub9je8rtld.streamlit.app/
 
 
 
