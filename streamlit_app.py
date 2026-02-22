@@ -53,8 +53,15 @@ st.pyplot(fig2)
 # PREDICTION SECTION 
 st.header("🎯 Predict Candidate Placement")
 
-with open("placement_model.pkl", "rb") as f:
-    model=pickle.load(f)
+import zipfile
+import os
+
+
+if not os.path.exists("placement_model.pkl"):
+    with zipfile.ZipFile("placement_model.zip", "r") as zip_ref:
+        zip_ref.extractall()
+
+model = pickle.load(open("placement_model.pkl", "rb"))
 
 interview_score = st.number_input("Interview Score", 0, 100, 60)
 skills_match = st.number_input("Skills Match %", 0, 100, 70)
